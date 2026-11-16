@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<robot name="xarm7_g2_visual">
+  <material name="xarm_white"><color rgba="0.88 0.90 0.92 1"/></material>
+  <material name="xarm_silver"><color rgba="0.45 0.49 0.54 1"/></material>
+
+  <link name="link_base"><visual><geometry><mesh filename="/home/a/xarm7-vr-lab/vendor/xarm_ros/xarm_description/meshes/xarm7/visual/link_base.stl"/></geometry><material name="xarm_white"/></visual></link>
+  <link name="link1"><visual><geometry><mesh filename="/home/a/xarm7-vr-lab/vendor/xarm_ros/xarm_description/meshes/xarm7/visual/link1.stl"/></geometry><material name="xarm_white"/></visual></link>
+  <joint name="joint1" type="revolute"><parent link="link_base"/><child link="link1"/><origin xyz="0 0 0.267" rpy="0 0 0"/><axis xyz="0 0 1"/><limit lower="-6.283" upper="6.283" effort="50" velocity="3.14"/></joint>
+  <link name="link2"><visual><geometry><mesh filename="/home/a/xarm7-vr-lab/vendor/xarm_ros/xarm_description/meshes/xarm7/visual/link2.stl"/></geometry><material name="xarm_white"/></visual></link>
+  <joint name="joint2" type="revolute"><parent link="link1"/><child link="link2"/><origin xyz="0 0 0" rpy="-1.5708 0 0"/><axis xyz="0 0 1"/><limit lower="-2.059" upper="2.0944" effort="50" velocity="3.14"/></joint>
+  <link name="link3"><visual><geometry><mesh filename="/home/a/xarm7-vr-lab/vendor/xarm_ros/xarm_description/meshes/xarm7/visual/link3.stl"/></geometry><material name="xarm_white"/></visual></link>
+  <joint name="joint3" type="revolute"><parent link="link2"/><child link="link3"/><origin xyz="0 -0.293 0" rpy="1.5708 0 0"/><axis xyz="0 0 1"/><limit lower="-6.283" upper="6.283" effort="30" velocity="3.14"/></joint>
+  <link name="link4"><visual><geometry><mesh filename="/home/a/xarm7-vr-lab/vendor/xarm_ros/xarm_description/meshes/xarm7/visual/link4.stl"/></geometry><material name="xarm_white"/></visual></link>
+  <joint name="joint4" type="revolute"><parent link="link3"/><child link="link4"/><origin xyz="0.0525 0 0" rpy="1.5708 0 0"/><axis xyz="0 0 1"/><limit lower="-0.19198" upper="3.927" effort="30" velocity="3.14"/></joint>
+  <link name="link5"><visual><geometry><mesh filename="/home/a/xarm7-vr-lab/vendor/xarm_ros/xarm_description/meshes/xarm7/visual/link5.stl"/></geometry><material name="xarm_white"/></visual></link>
+  <joint name="joint5" type="revolute"><parent link="link4"/><child link="link5"/><origin xyz="0.0775 -0.3425 0" rpy="1.5708 0 0"/><axis xyz="0 0 1"/><limit lower="-6.283" upper="6.283" effort="30" velocity="3.14"/></joint>
+  <link name="link6"><visual><geometry><mesh filename="/home/a/xarm7-vr-lab/vendor/xarm_ros/xarm_description/meshes/xarm7/visual/link6.stl"/></geometry><material name="xarm_white"/></visual></link>
+  <joint name="joint6" type="revolute"><parent link="link5"/><child link="link6"/><origin xyz="0 0 0" rpy="1.5708 0 0"/><axis xyz="0 0 1"/><limit lower="-1.69297" upper="3.14159" effort="20" velocity="3.14"/></joint>
+  <link name="link7"><visual><geometry><mesh filename="/home/a/xarm7-vr-lab/vendor/xarm_ros/xarm_description/meshes/xarm7/visual/link7.stl"/></geometry><material name="xarm_silver"/></visual></link>
+  <joint name="joint7" type="revolute"><parent link="link6"/><child link="link7"/><origin xyz="0.076 0.097 0" rpy="-1.5708 0 0"/><axis xyz="0 0 1"/><limit lower="-6.283" upper="6.283" effort="20" velocity="3.14"/></joint>
+
+  <link name="gripper_base"><visual><geometry><mesh filename="/home/a/xarm7-vr-lab/vendor/xarm_ros/xarm_description/meshes/gripper/xarm/base_link_g2.dae"/></geometry><material name="xarm_white"/></visual></link>
+  <joint name="gripper_fix" type="fixed"><parent link="link7"/><child link="gripper_base"/><origin xyz="0 0 0" rpy="0 0 0"/></joint>
+
+  <link name="left_outer"><visual><geometry><mesh filename="/home/a/xarm7-vr-lab/vendor/xarm_ros/xarm_description/meshes/gripper/xarm/left_outer_knuckle_g2.dae"/></geometry><material name="xarm_silver"/></visual></link>
+  <joint name="drive_joint" type="revolute"><parent link="gripper_base"/><child link="left_outer"/><origin xyz="0 0.035 0.059098" rpy="0 0 0"/><axis xyz="1 0 0"/><limit lower="0" upper="0.85" effort="50" velocity="2"/></joint>
+  <link name="left_finger"><visual><geometry><mesh filename="/home/a/xarm7-vr-lab/vendor/xarm_ros/xarm_description/meshes/gripper/xarm/left_finger_g2.dae"/></geometry><material name="xarm_silver"/></visual></link>
+  <joint name="left_finger_joint" type="revolute"><parent link="left_outer"/><child link="left_finger"/><origin xyz="0 0.035465 0.042039" rpy="0 0 0"/><axis xyz="-1 0 0"/><limit lower="0" upper="0.85" effort="50" velocity="2"/></joint>
+  <link name="left_inner"><visual><geometry><mesh filename="/home/a/xarm7-vr-lab/vendor/xarm_ros/xarm_description/meshes/gripper/xarm/left_inner_knuckle_g2.dae"/></geometry><material name="xarm_silver"/></visual></link>
+  <joint name="left_inner_joint" type="revolute"><parent link="gripper_base"/><child link="left_inner"/><origin xyz="0 0.02 0.074098" rpy="0 0 0"/><axis xyz="1 0 0"/><limit lower="0" upper="0.85" effort="50" velocity="2"/></joint>
+
+  <link name="right_outer"><visual><geometry><mesh filename="/home/a/xarm7-vr-lab/vendor/xarm_ros/xarm_description/meshes/gripper/xarm/right_outer_knuckle_g2.dae"/></geometry><material name="xarm_silver"/></visual></link>
+  <joint name="right_outer_joint" type="revolute"><parent link="gripper_base"/><child link="right_outer"/><origin xyz="0 -0.035 0.059098" rpy="0 0 0"/><axis xyz="-1 0 0"/><limit lower="0" upper="0.85" effort="50" velocity="2"/></joint>
+  <link name="right_finger"><visual><geometry><mesh filename="/home/a/xarm7-vr-lab/vendor/xarm_ros/xarm_description/meshes/gripper/xarm/right_finger_g2.dae"/></geometry><material name="xarm_silver"/></visual></link>
+  <joint name="right_finger_joint" type="revolute"><parent link="right_outer"/><child link="right_finger"/><origin xyz="0 -0.035465 0.042039" rpy="0 0 0"/><axis xyz="1 0 0"/><limit lower="0" upper="0.85" effort="50" velocity="2"/></joint>
+  <link name="right_inner"><visual><geometry><mesh filename="/home/a/xarm7-vr-lab/vendor/xarm_ros/xarm_description/meshes/gripper/xarm/right_inner_knuckle_g2.dae"/></geometry><material name="xarm_silver"/></visual></link>
+  <joint name="right_inner_joint" type="revolute"><parent link="gripper_base"/><child link="right_inner"/><origin xyz="0 -0.02 0.074098" rpy="0 0 0"/><axis xyz="-1 0 0"/><limit lower="0" upper="0.85" effort="50" velocity="2"/></joint>
+</robot>

@@ -1,0 +1,13 @@
+{
+  "package": "@webxr-input-profiles/assets",
+  "version": "1.0.20",
+  "source_base": "https://cdn.jsdelivr.net/npm/@webxr-input-profiles/assets@1.0.20/dist/profiles/",
+  "scope": "Unmodified profilesList and Meta Quest Touch Plus profile/models only; other profiles are not installed.",
+  "license": "MIT; see LICENSE.md",
+  "sha256": {
+    "profilesList.json": "fe0442d7b206e74d1d3d597ed5a28759e9f0a26d5814dabd179acdf1560b4ad4",
+    "meta-quest-touch-plus/profile.json": "f69041753f555fb91c36d97fd4a58885f3ceb35e2273b179f59cedd464aec688",
+    "meta-quest-touch-plus/left.glb": "41a35b80221398d37029cbfaa9e39084ccd43e0206be72a5e8460f52e7882cb4",
+    "meta-quest-touch-plus/right.glb": "5126d638fb1d03e05d16d8eec3b31b9588df88eaa8b42cc21b857fac3bd44916"
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "robot_ip": "192.168.1.244",
+  "quest_input_backend": "unitree",
+  "quest_input_transport": "lan",
+  "quest_lan_host": "192.168.1.100",
+  "lerobot_root": "/path/to/lerobot",
+  "openteach_root": "/path/to/open-teach-xarm7",
+  "openteach_python": "/path/to/openteach/bin/python",
+  "dataset_root": "/path/to/lerobot_datasets",
+  "cameras": [
+    {
+      "name": "wrist",
+      "path": "/dev/v4l/by-id/your-wrist-camera-video-index0",
+      "width": 640,
+      "height": 480,
+      "fps": 60,
+      "fourcc": "MJPG",
+      "rotation": 180,
+      "auto_exposure": 1,
+      "exposure": 300,
+      "gain": 15
+    },
+    {
+      "name": "global",
+      "path": "/dev/v4l/by-id/your-global-camera-video-index0",
+      "width": 640,
+      "height": 480,
+      "fps": 30,
+      "fourcc": "MJPG",
+      "rotation": 0,
+      "autofocus": false,
+      "focus": 128
+    }
+  ],
+  "gripper": {
+    "open_position": 850,
+    "close_position": 0
+  },
+  "workspace_mm": null,
+  "safety": {
+    "first_test": {
+      "max_translation_step_mm": 2.0,
+      "max_rotation_step_rad": 0.01,
+      "tcp_speed_mm_s": 50.0,
+      "tcp_acceleration_mm_s2": 50.0
+    },
+    "recording": {
+      "max_translation_step_mm": 5.0,
+      "max_rotation_step_rad": 0.05,
+      "tcp_speed_mm_s": 50.0,
+      "tcp_acceleration_mm_s2": 200.0
+    }
+  }
+}
+

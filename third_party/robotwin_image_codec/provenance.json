@@ -1,0 +1,10 @@
+{
+  "decode_image_bit.py": {
+    "url": "https://raw.githubusercontent.com/RoboTwin-Platform/RoboTwin/main/data/decode_image_bit.py",
+    "sha256": "90df99c52d3f127a09f5960680113f17e8b3e25b2e3cb9117abdeb249d7a337e"
+  },
+  "LICENSE": {
+    "url": "https://raw.githubusercontent.com/RoboTwin-Platform/RoboTwin/main/LICENSE",
+    "sha256": "c695d421718e54e6f3a60858f0c601125c3ecc60c199332c15947360561e2a9f"
+  }
+}

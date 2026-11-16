@@ -1,0 +1,26 @@
+{
+  "task_id": "paper_cup_handover",
+  "task": "抓起面前的空纸杯，移动到固定黑框交接点并停稳，等待客人取杯",
+  "robot_ip": "192.168.1.244",
+  "units": {
+    "translation": "mm",
+    "rotation": "degrees"
+  },
+  "safety": {
+    "empty_cup_only": true,
+    "fixed_handover_target": true,
+    "human_tracking": false,
+    "release_during_handover": false
+  },
+  "poses": {
+    "pregrasp": {
+      "tcp_xyz_rpy": [538.979, 139.533, 554.949, 174.247, 22.373, 174.442],
+      "gripper_raw": 851,
+      "verified_from": ["wrist_camera", "global_camera", "xarm_readback"]
+    },
+    "grasp": null,
+    "safe_lift": null,
+    "handover": null
+  },
+  "workspace_mm": null
+}

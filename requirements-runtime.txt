@@ -1,0 +1,15 @@
+# Robot and recorder environment. Keep separate from the TeleVuer numpy<2 environment.
+xarm-python-sdk==1.18.4
+numpy>=1.26
+scipy>=1.11
+pyzmq>=25
+opencv-python-headless>=4.8
+av>=14
+pyarrow>=17
+h5py>=3.8
+Pillow>=10
+aiohttp>=3.9
+msgpack>=1.0
+pybullet>=3.2
+pytest>=8
+

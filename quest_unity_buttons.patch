@@ -1,0 +1,42 @@
+diff --git a/VR/Franka-Bot-Unity/Assets/Scripts/Gesture Detection/GestureDetector.cs b/VR/Franka-Bot-Unity/Assets/Scripts/Gesture Detection/GestureDetector.cs
+index 1770c3d..5143f9f 100644
+--- a/VR/Franka-Bot-Unity/Assets/Scripts/Gesture Detection/GestureDetector.cs	
++++ b/VR/Franka-Bot-Unity/Assets/Scripts/Gesture Detection/GestureDetector.cs	
+@@ -136,10 +136,20 @@ class GestureDetector : MonoBehaviour
+         string message = TypeMarker + "|";
+         message = message + pos.x + "," + pos.y + "," + pos.z + "|";
+         message = message + quat.w + "," + quat.x + "," + quat.y + "," + quat.z + "|";
+-        message = message + OVRInput.Get(OVRInput.RawButton.RIndexTrigger) + "|";
++        var device = UnityEngine.XR.InputDevices.GetDeviceAtXRNode(UnityEngine.XR.XRNode.RightHand);
++        float triggerValue;
++        device.TryGetFeatureValue(UnityEngine.XR.CommonUsages.trigger, out triggerValue);
++        triggerValue = Mathf.Max(triggerValue, OVRInput.Get(OVRInput.RawAxis1D.RIndexTrigger, OVRInput.Controller.RTouch));
++        bool triggerPressed = triggerValue >= 0.55f || OVRInput.Get(OVRInput.RawButton.RIndexTrigger, OVRInput.Controller.RTouch);
++        bool aPressed;
++        device.TryGetFeatureValue(UnityEngine.XR.CommonUsages.primaryButton, out aPressed);
++        aPressed = aPressed || OVRInput.Get(OVRInput.RawButton.A, OVRInput.Controller.RTouch);
++        // Independent buttons: field 4 is index trigger; field 8 is A.
++        message = message + triggerPressed + "|";
+         message = message + offsetForward.x + "," + offsetForward.y + "," + offsetForward.z + "|";
+         message = message + offsetRight.x + "," + offsetRight.y + "," + offsetRight.z + "|";
+         message = message + offsetUp.x + "," + offsetUp.y + "," + offsetUp.z;
++        message = message + "|" + aPressed;
+ 
+         bool sent = RemoteClient.TrySendFrame(message);
+         if (!sent) {
+@@ -182,7 +192,7 @@ class GestureDetector : MonoBehaviour
+         // Streams Data
+         if (modeChange && currentMode == 1)
+         {
+-            OVRManager.display.RecenterPose();
++            // Stream pause/resume must NOT invalidate the calibrated world frame.
+             StreamAbsoluteData = true;
+             controllerColor = Color.green; // Set the controller color to green
+             ToggleMenuButton(false);
+@@ -244,4 +254,4 @@ class GestureDetector : MonoBehaviour
+         RemoteClient.Dispose();
+         NetMQConfig.Cleanup(false);
+     }
+-}
+\ No newline at end of file
++}

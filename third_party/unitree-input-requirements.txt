@@ -1,0 +1,9 @@
+# Input-only environment. Do not install these into the robot SDK environment.
+# TeleVuer revision: 766de45e74373ae0ea66321d942ce538385655a5
+-e ./third_party/unitree-televuer
+vuer[all]==0.0.60
+# Vuer 0.0.60 imports Flag/PrefixProto removed in params-proto 3.x.
+params-proto==2.13.2
+numpy<2
+scipy
+pyzmq

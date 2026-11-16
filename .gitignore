@@ -1,0 +1,50 @@
+# Local deployment configuration and live state
+/config.json
+/relative_control_settings.json
+/relative_home.json
+/.state/
+.env
+.env.*
+*.pem
+*.key
+*.p12
+*.pfx
+*credentials*.json
+*session*.json
+
+# Environments and caches
+.venv*/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+*.egg-info/
+
+# Recorded data, models, and generated exports
+/datasets/
+/lerobot_datasets/
+/outputs/
+/exports/
+/quality_reports/
+/checkpoints/
+*.pt
+*.pth
+*.safetensors
+*.onnx
+*.sqlite*
+*.db
+*.jsonl
+*.log
+*.partial
+*.mp4
+*.hdf5
+*.h5
+*.parquet
+*.whl
+*.apk
+*.zip
+*.tgz
+
+# Upstream checkout: install from third_party/unitree-input-requirements.txt
+/third_party/unitree-televuer/
+

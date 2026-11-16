@@ -1,0 +1,107 @@
+{
+  "speed_mm_s": 200.0,
+  "translation_scale": 3.0,
+  "joint_speed_rad_s": 1.0,
+  "acceleration_mm_s2": 1000.0,
+  "tracking_lead_mm": 12.0,
+  "range_mm": null,
+  "direction_matrix": [
+    [
+      0.156413,
+      -0.166658,
+      0.97353
+    ],
+    [
+      -0.985227,
+      0.043268,
+      0.165699
+    ],
+    [
+      0.069738,
+      0.985065,
+      0.157428
+    ]
+  ],
+  "rotation_enabled": true,
+  "rotation_axes": [
+    true,
+    true,
+    true
+  ],
+  "rotation_scale": 0.95,
+  "rotation_speed_deg_s": 60.0,
+  "rotation_acceleration_deg_s2": 240.0,
+  "gripper_enabled": true,
+  "gripper_open_mm": 84.0,
+  "gripper_close_mm": 0.0,
+  "gripper_speed_mm_s": 50.0,
+  "gripper_force": 2.0,
+  "teleop_button": "trigger",
+  "gripper_button": "b",
+  "empirical_matrix": null,
+  "empirical_frame": null,
+  "saved_empirical_matrix": [
+    [
+      0.13522181928620258,
+      -0.005424399329535355,
+      0.5149838435006837,
+      -0.13785314407547833,
+      -0.040216100915792675,
+      0.026025211319584483
+    ],
+    [
+      -0.942690944669516,
+      0.03483307293719017,
+      0.2881622666587261,
+      -0.028292350915737518,
+      0.021360781269618764,
+      -0.29172176934085164
+    ],
+    [
+      0.009746750589703408,
+      0.6029011568380357,
+      -0.09249572696179503,
+      -0.010279443057202166,
+      0.011867617235610554,
+      0.10964647043578415
+    ],
+    [
+      -0.002133939190886227,
+      -0.005411695908315857,
+      -0.014317332478996293,
+      -0.0645809802766139,
+      0.0690879954263427,
+      -0.4271482422908823
+    ],
+    [
+      -0.004404345219025385,
+      0.052579407889977295,
+      0.002865843894427285,
+      0.3714289822781658,
+      0.0491507655574998,
+      -0.0514935876962944
+    ],
+    [
+      0.06503299010575551,
+      -0.0020152434516879894,
+      0.005662718774364767,
+      0.00472842912753916,
+      -0.3219058116648844,
+      0.026581771042815495
+    ]
+  ],
+  "saved_empirical_frame": [
+    "unitree",
+    "unitree-1791889662285-bgxy1h884k"
+  ],
+  "input_filter": {
+    "enabled": true,
+    "position_min_cutoff_hz": 2.0,
+    "position_beta_hz_per_mm_s": 0.08,
+    "position_max_cutoff_hz": 15.0,
+    "rotation_min_cutoff_hz": 2.0,
+    "rotation_beta_hz_per_deg_s": 0.15,
+    "rotation_max_cutoff_hz": 15.0,
+    "derivative_cutoff_hz": 2.0
+  }
+}

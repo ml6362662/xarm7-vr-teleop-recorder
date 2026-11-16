@@ -1,0 +1,13 @@
+<!doctype html>
+<html lang="zh-CN">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Quest → xArm · 扳机遥操 / B 夹爪</title>
+<style>body{background:#111827;color:#e5e7eb;font:22px sans-serif;margin:32px;max-width:900px}button{font-size:28px;padding:20px;background:#185a87;color:white;border:0;border-radius:12px}#status{white-space:pre-wrap;line-height:1.6}canvas{position:fixed;inset:0;z-index:-1}small{color:#b7c4d6}</style>
+<h1>Quest → xArm</h1>
+<p>右手食指扳机：按住遥操，松开暂停。<br>右手 B：按住闭合夹爪，松开打开。<br>B 不暂停数据、不重置坐标。</p>
+<button id="start" disabled>开始手柄采集</button>
+<p id="status">连接检查中…</p>
+<small>这里只发送真实手柄数据，不自动使能机械臂。电脑 GUI 中确认 XYZ/RxRyRz、扳机和 B 正常后，再启用遥操。首次切换采集源须在只读预览核对方向或重新标定。退出 VR、丢失追踪或连接超时停止运动，保持夹持。</small>
+<canvas id="canvas"></canvas>
+<script>const token=new URL(location.href).searchParams.get('token');const s=document.createElement('script');s.src='/quest_webxr.js?token='+encodeURIComponent(token);document.body.appendChild(s);</script>
+</html>
